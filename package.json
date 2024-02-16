@@ -1,0 +1,23 @@
+{
+  "name": "crawl-pemilu2024",
+  "version": "1.0.0",
+  "description": "make crawl data https://pemilu2024.kpu.go.id/",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "npx sequelize-cli db:migrate --env test && node test/example_com.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "mysql2": "^2.3.3",
+    "puppeteer": "^22.0.0",
+    "sequelize": "^6.37.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.4",
+    "sqlite3": "^5.1.7"
+  }
+}
