@@ -20,7 +20,7 @@ const main = async ({ config, Handlers, url, name, modelName } ) => {
     }
 
     const administrative = new Administrative({model: db[modelName]});
-    const handlers = new Handlers(page, config, administrative);
+    const handlers = new Handlers(page, config, administrative, browser);
 
     await handlers.WrapHandlers();
 

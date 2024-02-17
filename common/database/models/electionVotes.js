@@ -4,6 +4,8 @@ module.exports =  (sequelize, DataTypes) => {
     class ElectionVotes extends Model {}
     ElectionVotes.init({
         info: DataTypes.STRING,
+        parent: DataTypes.INTEGER,
+        level: DataTypes.INTEGER,
         name: DataTypes.STRING,
         url: DataTypes.STRING,
         progress: DataTypes.STRING,

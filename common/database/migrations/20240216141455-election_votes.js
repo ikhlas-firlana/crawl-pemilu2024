@@ -9,6 +9,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER.UNSIGNED
       },
+      parent: {
+        type: Sequelize.INTEGER.UNSIGNED,
+        defaultValue: 0,
+      },
+      level: {
+        type: Sequelize.INTEGER.UNSIGNED,
+        defaultValue: 0,
+      },
       info: Sequelize.DataTypes.STRING,
       name: Sequelize.DataTypes.STRING,
       url: Sequelize.DataTypes.STRING,

@@ -49,5 +49,17 @@ class CommonHandlers {
     }
     return lib[waktuChar] ?? null
   }
+  cleanupNumber = (pooling) => {
+    if (!Number.isInteger(parseFloat(pooling))) {
+      return 0;
+    }
+    return parseFloat(pooling.split('.').join(''));
+  }
+  cleanupPercentage = (pooling) => {
+    if (!Number.isInteger(parseFloat(pooling.split('%').join('')))) {
+      return 0;
+    }
+    return parseFloat(pooling.split('%').join(''));
+  }
 }
 exports.CommonHandlers = CommonHandlers;
