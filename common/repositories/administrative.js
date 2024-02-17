@@ -7,7 +7,7 @@ class Administrative {
             return null;
 
         await this.model.findOrCreate({
-          where: { url: params['url'], name: params['name'] },
+          where: { info: params['info'] },
           defaults: {
             name: params['name'],
             url: params['url'],

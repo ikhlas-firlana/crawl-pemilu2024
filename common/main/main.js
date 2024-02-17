@@ -19,21 +19,10 @@ const main = async ({ config, Handlers, url, name, modelName } ) => {
       await page.setViewport(config.viewPort);
     }
 
-    // const administrative = new Administrative({model: db[modelName]});
-    // const handlers = new Handlers(page, config, administrative);
+    const administrative = new Administrative({model: db[modelName]});
+    const handlers = new Handlers(page, config, administrative);
 
-    // await page.waitForNavigation();
-
-    const element = await page.waitForSelector('body');
-    element.scrollTop = 1000;
-
-    await page.locator('#main').setTimeout(1000)
-    //
-    // await page.locator('#main').scroll({
-    //   scrollTop: 200,
-    // });
-
-    // await handlers.WrapHandlers();
+    await handlers.WrapHandlers();
 
     await browser.close();
   } catch (e) {

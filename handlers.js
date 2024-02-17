@@ -10,12 +10,16 @@ class Handlers extends CommonHandlers {
 
     WrapHandlers = async () => {
 
+        await this.page.waitForNetworkIdle();
+
         const result = await this.page.evaluate(this.featureGet, this.setupElementFeature())
+
+        console.log(JSON.stringify(result));
 
         await this.administrative.createMultipleNews(result)
     }
 
-    featureGet = async (element) => {
+    featureGet = (element) => {
         const info = document.querySelector(element.info)?.textContent;
 
         return Array.from(document.querySelectorAll(element.id)).map((elementChild) => {
@@ -28,7 +32,7 @@ class Handlers extends CommonHandlers {
                 candidate_2: elementChild.querySelectorAll(element.candidate_2)[2]?.textContent,
                 candidate_3: elementChild.querySelectorAll(element.candidate_3)[3]?.textContent,
             }
-        }).filter((article) => article.title && article.link)
+        })
     }
 
     setupElementFeature = () => {
