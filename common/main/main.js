@@ -19,7 +19,7 @@ const main = async ({ config, Handlers, url, name, modelName } ) => {
       await page.setViewport(config.viewPort);
     }
 
-    const administrative = new Administrative({model: db[modelName]});
+    const administrative = new Administrative({model: db[modelName], modelVote: db.votes});
     const handlers = new Handlers(page, config, administrative, browser);
 
     await handlers.WrapHandlers();
