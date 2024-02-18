@@ -94,16 +94,17 @@ class Handlers extends CommonHandlers {
 
         await this.mainHandler()
 
-        await this.handlerByLevel(1)
+        // await this.handlerByLevel(1)
+        //
+        // await this.handlerByLevel(2)
+        //
+        // await this.handlerByLevel(3)
+        //
+        // await this.handlerByLevel(4)
 
-        await this.handlerByLevel(2)
+        await this.handlerByLevel(5)
 
-        await this.handlerByLevel(3)
-
-        await this.handlerByLevel(4)
-
-        await this.handlerVoter(5)
-
+        // await this.handlerVoter(5)
     }
 
     featureGet = (element) => {
